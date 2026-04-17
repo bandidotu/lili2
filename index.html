@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>XV Años – Liliana</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ============================  SOBRE  ============================ -->
+  <div id="envelope-screen">
+    <div class="env-scene">
+      <p class="env-top-text">Tienes un mensaje especial</p>
+
+      <div class="envelope-wrap" id="envelopeWrap">
+        <div class="envelope" id="envelope">
+          <!-- Solapa trasera -->
+          <div class="env-back-flap"></div>
+          <!-- Cuerpo del sobre -->
+          <div class="env-body">
+            <!-- Carta que sube -->
+            <div class="env-letter" id="envLetter">
+              <div class="letter-content">
+                <p class="lc-pre">Una invitación muy especial para</p>
+                <p class="lc-name">Liliana</p>
+                <p class="lc-xv">XV Años</p>
+                <div class="lc-ornament">✦</div>
+                <p class="lc-date">18 · Julio · 2026</p>
+              </div>
+            </div>
+            <!-- Solapa delantera (tapa) -->
+            <div class="env-front-flap" id="envFlap">
+              <div class="flap-diamond"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sello de cera -->
+          <div class="wax-seal" id="waxSeal" onclick="togglePlay()">
+            <span>XV</span>
+          </div>
+        
+      </div>
+
+      <p class="env-hint" id="envHint">✦ Toca para abrir ✦</p>
+    </div>
+  </div>
+
+  <!-- ============================  INVITACIÓN  ============================ -->
+  <div id="invitation" class="hidden">
+
+    <div class="petal" style="--d:3s;--x:10%;--s:14px"></div>
+    <div class="petal" style="--d:5s;--x:33%;--s:10px"></div>
+    <div class="petal" style="--d:4s;--x:68%;--s:17px"></div>
+    <div class="petal" style="--d:6s;--x:84%;--s:12px"></div>
+    <div class="petal" style="--d:3.5s;--x:52%;--s:15px"></div>
+
+    <!-- PORTADA -->
+    <section class="section cover">
+      <div class="floral-top"></div>
+      <div class="cover-inner reveal">
+        <p class="pre-title">Te invito a celebrar</p>
+        <h1 class="mis-anos">Mis <span>XV</span> Años</h1>
+        <div class="crown">✦</div>
+        <h2 class="nombre">Liliana</h2>
+        <div class="foto-portada">
+          <div class="foto-frame">
+            <div class="foto-placeholder"><span class="ph-icon">◈</span><small><img src="img/foto.png" alt="Descripción de la foto" class="foto-img"></small></div>
+          </div>
+        </div>
+        <blockquote class="frase">
+          "Hay momentos inolvidables que se atesoran con el corazón para siempre. Por esa razón, con la alegría y emoción, quiero compartir contigo esta noche maravillosa celebrando juntos mis XV años."
+        </blockquote>
+        <div class="floral-divider"></div>
+        <div class="music-player">
+          <p class="music-label">♪ Dale Play</p>
+          <audio id="audio" src="audio/song.mp3" loop></audio>
+          <div class="controls"><button class="ctrl-btn" onclick="togglePlay()">▶</button></div>
+          <div class="progress-bar"><div class="progress-fill" id="fill"></div></div>
+        </div>
+        <div class="floral-divider"></div>
+        <p class="section-label">A veces crecemos tan rápido que no nos damos cuenta de quiénes nos sostuvieron para no caer. Hoy me detengo, los miro a los ojos y les digo de todo corazón: mi felicidad de hoy es gracias a que ustedes forman parte de mi ayer y de mi mañana.</p>
+      </div>
+      
+      
+    </section>
+
+    <!-- PADRES Y FECHA -->
+    <section class="section parents">
+      <div class="floral-divider"></div>
+      
+      <div class="reveal">
+        <p class="section-label2">MI HISTORIA APENAS COMIENZA Y NO PODRÍA ESTAR MÁS ORGULLOSA DE MIS RAÍCES; TE ESPERO PARA QUE ME ACOMPAÑES EN ESTE DÍA TAN ESPECIAL JUNTO A:</p><br>
+        <h3 class="subtitle-script">Mis Padres</h3>
+        <p class="names-couple">Jose Diego Salamanca &amp; Agustina Mendoza</p>
+        <h3 class="subtitle-script" style="margin-top:1.5rem">Mi Madrina</h3>
+        <p class="names-couple">Silvia Mendoza Bautista</p>
+        <div class="date-box">
+          <p class="a-festejar">A festejar mis</p>
+          <p class="xv-grande">XV AÑOS</p>
+          <div class="fecha-elegante">
+            <span class="mes-script">Julio</span>
+            <span class="dia-num">18</span>
+            <span class="anio">2026</span>
+          </div>
+          <p class="dia-semana">Sábado</p>
+        </div>
+
+        <div class="countdown-box">
+          <p class="faltan-label">Faltan</p>
+          <div class="countdown" id="countdown">
+            <div class="cd-unit"><span id="cd-days">00</span><small>Días</small></div>
+            <span class="cd-sep">:</span>
+            <div class="cd-unit"><span id="cd-hours">00</span><small>Horas</small></div>
+            <span class="cd-sep">:</span>
+            <div class="cd-unit"><span id="cd-mins">00</span><small>Minutos</small></div>
+            <span class="cd-sep">:</span>
+            <div class="cd-unit"><span id="cd-secs">00</span><small>Segundos</small></div>
+          </div>
+          <p class="gran-dia hidden" id="granDia">¡Hoy es el gran día! ✦</p>
+        </div>
+
+        <div class="calendar-mini">
+          <p class="cal-mes">Julio</p>
+          <table class="cal-table">
+            <thead><tr><th>L</th><th>M</th><th>Mi</th><th>J</th><th>V</th><th>S</th><th>D</th></tr></thead>
+            <tbody id="cal-body"></tbody>
+          </table>
+          <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=XV+Años+Liliana&dates=20260718T230000Z/20260719T050000Z&details=¡Te+espero+para+celebrar+mis+XV+años!&location=Iglesia+de+San+José,+Tlaxcala&sf=true&output=xml" 
+              target="_blank" 
+              class="btn-agendar">
+              ◈ Añadir al calendario
+            </a>
+        </div>
+      </div>
+      <div class="floral-divider"></div>
+    </section>
+
+    <!-- EVENTOS -->
+    <section class="section events">
+      <div class="reveal">
+        <div class="event-card">
+          <div class="event-icon">⛪</div>
+          <h3 class="script-heading">Misa de Agradecimiento</h3>
+          <p class="event-time">01:30 PM</p>
+          <p class="event-place">Iglesia de San José Xicohténcatl</p>
+          <p class="event-address">San José  43 Av. Pino Suárez San José Xicohténcatl, Tlaxcala CP. 90515</p>
+          <a class="btn-location" href="https://maps.app.goo.gl/hThv2pRR4r7VV4g8A" target="_blank">◈ Ver Ubicación</a>
+          <div class="map-embed">. 
+            <iframe title="Mapa Iglesia" loading="lazy"
+            src="https://www.google.com/maps/embed?pb=!4v1776314125376!6m8!1m7!1s0q44nP3Y_0bYSUh8eUaavw!2m2!1d19.3554485937629!2d-97.8304623299086!3f274.83!4f-18.840000000000003!5f0.7820865974627469"
+              width="100%" height="190" style="border:0;border-radius:12px;display:block;"></iframe>
+          </div>
+        </div>
+
+        <div class="foto-evento reveal">
+          <div class="foto-placeholder tall"><span class="ph-icon">◈</span><small>Foto especial</small></div>
+        </div>
+
+        <div class="event-card reveal">
+          <div class="event-icon">✦</div>
+          <h3 class="script-heading">Recepción</h3>
+          <p class="event-time">04:30 PM</p>
+          <p class="event-place">Casa de la Familia Salamanca</p>
+          <p class="event-address">37 Av. Pino Suárez, San José Xicohténcatl, Tlaxcala CP. 90515</p>
+          <a class="btn-location" href="https://maps.app.goo.gl/aNQjj56QpGFokkDx5" target="_blank">◈ Ver Ubicación</a>
+          <div class="map-embed">
+            <iframe title="Mapa Recepción" loading="lazy"
+              src="https://www.google.com/maps/embed?pb=!4v1776448989173!6m8!1m7!1sygc2RJ7eDYvIEdOXbPtyjQ!2m2!1d19.35564811042231!2d-97.82927266668375!3f347.21416677225045!4f-6.683223164975928!5f0.7820865974627469"
+              width="100%" height="190" style="border:0;border-radius:12px;display:block;"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ITINERARIO -->
+    <section class="section itinerary">
+      <div class="floral-divider"></div>
+      <div class="reveal">
+        <h3 class="script-heading big">Itinerario</h3>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-dot">⊙</div><div class="tl-content"><span class="tl-time">4:30 PM</span><span class="tl-event">Llegada</span></div></div>
+          <div class="tl-item"><div class="tl-dot">◈</div><div class="tl-content"><span class="tl-time">6:30 PM</span><span class="tl-event">Vals</span></div></div>
+          <div class="tl-item"><div class="tl-dot">⊕</div><div class="tl-content"><span class="tl-time">8:00 PM</span><span class="tl-event">Sesión de Fotos</span></div></div>
+          <div class="tl-item"><div class="tl-dot">✦</div><div class="tl-content"><span class="tl-time">10:30 PM</span><span class="tl-event">Fiesta</span></div></div>
+          <div class="tl-item"><div class="tl-dot">◇</div><div class="tl-content"><span class="tl-time">2:00 AM</span><span class="tl-event">Despedida</span></div></div>
+        </div>
+        <div class="vestimenta reveal">
+          <h3 class="script-heading big">Código de vestimenta</h3>
+          <p class="vest-tipo">ETIQUETA</p>
+          <div class="vest-icons">◈ ◇</div>
+          <p class="vest-nota">Con el fin de que nuestra quinceañera destaque en su día especial, les solicitamos amablemente elegir cualquier color para su vestuario, exceptuando el tono verde.</p>
+          <br><p class="vest-nota">Gracias por su cariño y por ayudarnos con este pequeño detalle.</p>
+        </div>
+      </div>
+      <div class="floral-divider"></div>
+    </section>
+
+    <!-- REGALOS + CONFIRMAR -->
+    <section class="section gifts">
+      <div class="reveal">
+        <div class="gift-box">
+          <div class="event-icon">◈</div>
+          <h3 class="script-heading">Sugerencia de regalos</h3>
+          <p class="gift-text">"Pronto estaré materializando mis sueños lejos de casa y, aunque me voy con el corazón lleno, los extrañaré mucho. Si nace de ti tener un detalle conmigo para mi nueva aventura, aquí te comparto unos datos.</p>
+          <div class="bank-info">
+            <div class="bank-icon">⊕</div>
+            
+            <ul class="lista-detalles">
+                <li><span class="rombo">◈</span> <strong>Calzado:</strong> #2</li>
+                <li><span class="rombo">◈</span> <strong>Ropa:</strong> Talla CH (playeras, pantalones, sudaderas)</li>
+                <li><span class="rombo">◈</span> <strong>Favoritos:</strong> Bolsos, perfumes y maquillaje</li>
+            </ul>
+            <!-- <p>Cuenta de Ahorro · Nombre y Apellido</p> -->
+             <br>
+            <p class="cuenta">¡Gracias por cada detalle!</p>
+          </div>
+        </div>
+
+        <div class="confirm-box reveal">
+          <div class="event-icon">◇</div>
+          <h3 class="script-heading">Confirmar asistencia</h3>
+          <p>Por favor confirma tu asistencia<br/>antes del <strong>12 de Julio</strong></p>
+
+          <a class="btn-confirm" href="https://wa.me/525574136564" target="_blank">✦ Confirmar Aquí</a>
+                                                        
+          <p class="confirm-note">Con mucho cariño, esta celebración es para que adolescentes y adultos puedan compartir y disfrutar juntos.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CIERRE -->
+    <section class="section closing">
+      <div class="floral-top"></div>
+      <div class="reveal closing-inner">
+        <h2 class="te-esperamos">¡Te esperamos!</h2>
+        <div class="foto-cierre">
+          <div class="foto-placeholder tall"><span class="ph-icon">✦</span><small>Foto final</small></div>
+        </div>
+        <p class="tu-presencia">Tu presencia y alegría hará que esta noche sea inolvidable.</p>
+        <h2 class="nombre-final">Liliana</h2>
+        <div class="flores-finales">✦ ◈ ✦</div>
+      </div>
+      <div class="floral-bottom"></div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+                         
